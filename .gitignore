@@ -30,3 +30,9 @@ realms_persistence.json
 $files/servers/*
 *-client.toml
 downloads/*
+
+.probe
+command_history.txt
+kubejs/config/client.properties
+kubejs/startup_scripts/jsconfig.json
+kubejs/server_scripts/jsconfig.json
