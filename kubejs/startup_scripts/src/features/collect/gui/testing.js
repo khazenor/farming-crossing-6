@@ -1,5 +1,5 @@
 const testGui = (event) => {
-  _testCodes.showMenu2(event)
+  CollectGuiMainMenu.openMainMenu(event)
 }
 
 const _testCodes = {
