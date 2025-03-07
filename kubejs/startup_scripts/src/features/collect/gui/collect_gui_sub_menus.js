@@ -10,7 +10,7 @@ const CollectGuiSubMenus = {
       let itemIds = ArrayHelper.arrayDiff(subCollectionItemIds, collectedIds)
       subMenu.addSlot({
         label: CollectTransHelper.categoryName(subCollectionId),
-        item: "minecraft:slime_ball"
+        item: "minecraft:nether_star"
       }, { "col": 0 })
       for (let itemId of itemIds) {
         let itemIcon
@@ -20,7 +20,7 @@ const CollectGuiSubMenus = {
           label = TransHelper.entityName(itemId)
         } else {
           itemIcon = itemId
-          TransHelper.itemName(itemId)
+          label = TransHelper.itemName(itemId)
         }
         subMenu.addSlot({
           label: label,
