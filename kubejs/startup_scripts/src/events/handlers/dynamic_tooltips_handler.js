@@ -1,0 +1,3 @@
+const dynamicTooltipsHandler = (event) => {
+  
+}

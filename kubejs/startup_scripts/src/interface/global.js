@@ -5,3 +5,4 @@ global.inventoryChangedHandler = inventoryChangedHandler
 global.itemRightClickedHandler = itemRightClickedHandler
 global.serverLoadedHandler = serverLoadedHandler
 global.entityInteractedHandler = entityInteractedHandler
+global.dynamicTooltipsHandler = dynamicTooltipsHandler
