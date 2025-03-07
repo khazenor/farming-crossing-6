@@ -8,7 +8,10 @@ StartupEvents.registry('item', event => {
     event.create(itemId)
   }
 
-  let nonStackableIds = CollectCustomItems.nonStackableIds
+  let nonStackableIds = [].concat(
+    CollectCustomItems.nonStackableIds,
+    CollectGuiItems.nonStackables
+  )
   for (let itemId of nonStackableIds) {
     event.create(itemId).maxStackSize(1)
   }

@@ -14,8 +14,8 @@ const itemRightClickedHandler = (event) => {
       FcLogger.log('clear player collection')
       CollectMethods.debugClearPlayerCollection(event)
       break
-    case 'minecraft:stick':
-      testGui(event)
+    case CollectGuiConst.id.mainMenu:
+      CollectGuiMainMenu.openMainMenu(event)
       break
   }
 }
