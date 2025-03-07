@@ -6,7 +6,7 @@ const CollectTooltips = {
         collectList = CollectEntity.listToSpawnEggs(collectList)
       } 
 
-      EventMethods.add(
+      EventHelpers.add(
         event,
         collectList,
         [CollectTransHelper.categoryName(categoryId)]
@@ -20,7 +20,7 @@ const CollectTooltips = {
       ) === CollectConst.entityCollectionId) {
         collectList = CollectEntity.listToSpawnEggs(collectList)
       }
-      EventMethods.add(
+      EventHelpers.add(
         event,
         collectList,
         [CollectTransHelper.categoryName(subCategoryId)]

@@ -87,7 +87,7 @@ const _testCodes = {
   },
   testCertificateMessage () {
     let certificateId = CollectTransHelper.certificateId('items')
-    EventMethods.tellPlayer(
+    EventHelpers.tellPlayer(
       event,
       Text.translate(
         CollectTransHelper.messageKey('categoryCompletedCongrats'),

@@ -1,6 +1,6 @@
 const MilesTicketTooltips = {
   tooltipHandler: (event) => {
-    EventMethods.add(
+    EventHelpers.add(
       event,
       MilesTicketConsts.bookletId,
       [
@@ -12,7 +12,7 @@ const MilesTicketTooltips = {
       ]
     )
 
-    EventMethods.add(
+    EventHelpers.add(
       event,
       MilesTicketConsts.ticketId,
       Text.translate(TransHelper.defaultTransKey(MilesTicketConsts.ticketId, 1))

@@ -1,14 +1,14 @@
 const MilesTicketEventMethods = {
   bundleMilesTickets: (event) => {
-    if (EventGetters.isPlayerShifting(event)) {
+    if (EventHelpers.isPlayerShifting(event)) {
       let numToBundle = MilesTicketConsts.numTicketsToBundle
-      while (EventGetters.numItemsInPlayer(event, MilesTicketConsts.ticketId) >= numToBundle) {
-        EventMethods.removeItemsInPlayer(
+      while (EventHelpers.numItemsInPlayer(event, MilesTicketConsts.ticketId) >= numToBundle) {
+        EventHelpers.removeItemsInPlayer(
           event,
           MilesTicketConsts.ticketId,
           numToBundle
         )
-        EventMethods.givePlayerItemStack(
+        EventHelpers.givePlayerItemStack(
           event,
           MilesTicketConsts.bookletId,
           1
@@ -17,9 +17,9 @@ const MilesTicketEventMethods = {
     }
   },
   unBundleMilesBooklet: (event) => {
-    if (EventGetters.isPlayerShifting(event)) {
-      EventGetters.mainHandItem(event).count --
-      EventMethods.givePlayerItemStack(
+    if (EventHelpers.isPlayerShifting(event)) {
+      EventHelpers.mainHandItem(event).count --
+      EventHelpers.givePlayerItemStack(
         event,
         MilesTicketConsts.ticketId,
         MilesTicketConsts.numTicketsToBundle
@@ -31,13 +31,13 @@ const MilesTicketEventMethods = {
     let numBooklets = Math.floor(numTickets / bundleRate)
     let numTixLeftover = numTickets - numBooklets * bundleRate
 
-    EventMethods.givePlayerItemStack(
+    EventHelpers.givePlayerItemStack(
       event,
       MilesTicketConsts.bookletId,
       numBooklets
     )
 
-    EventMethods.givePlayerItemStack(
+    EventHelpers.givePlayerItemStack(
       event,
       MilesTicketConsts.ticketId,
       numTixLeftover
@@ -51,7 +51,7 @@ const MilesTicketEventMethods = {
       )
       : ''
 
-    EventMethods.tellPlayer(
+    EventHelpers.tellPlayer(
       event,
       Text.translate(
         'milesTicket.message.tixObtained',

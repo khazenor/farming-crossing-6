@@ -1,4 +1,4 @@
-const EventGetters = {
+const EventHelpers = {
   player: (event) => {
     return event.player
   },
@@ -19,20 +19,17 @@ const EventGetters = {
   },
   playerData: (event) => {
     return event.player.persistentData
-  }
-}
-
-const EventMethods = {
+  },
   tellPlayer: (event, msg) => {
-    EventGetters.player(event).tell(msg)
+    event.player.tell(msg)
   },
   givePlayerItemStack: (event, itemId, count) => {
     let itemObj = Item.of(itemId)
     itemObj.count = count
-    EventGetters.player(event).give(itemObj)
+    event.player.give(itemObj)
   },
   removeItemsInPlayer: (event, itemId, numToRemove) => {
-    let player = EventGetters.player(event)
+    let player = event.player
     let numLeftToRemove = numToRemove
     for (let itemStack of player.inventory.allItems) {
       if (itemStack.id === itemId) {

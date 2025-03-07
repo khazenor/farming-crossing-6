@@ -22,7 +22,7 @@ const CollectHelper = {
       )
     }
 
-    EventMethods.tellPlayer(event, Text.translate(
+    EventHelpers.tellPlayer(event, Text.translate(
       CollectTransHelper.messageKey('genericCollected'),
       CollectTransHelper.categoryName(categoryId),
       StrHelper.cleanFloor(collectedNum),
@@ -62,7 +62,7 @@ const CollectHelper = {
     return milestones.includes(collectedNum)
   },
   handleCollectionCompleted (event, categoryId) {
-    EventMethods.tellPlayer(
+    EventHelpers.tellPlayer(
       event,
       Text.translate(
         CollectTransHelper.messageKey('categoryCompleted'),
@@ -70,14 +70,14 @@ const CollectHelper = {
       )
     )
     let certificateId = CollectTransHelper.certificateId(categoryId)
-    EventMethods.tellPlayer(
+    EventHelpers.tellPlayer(
       event,
       Text.translate(
         CollectTransHelper.messageKey('categoryCompletedCongrats'),
         Text.translate(TransHelper.itemName(certificateId))
       )
     )
-    EventMethods.givePlayerItemStack(
+    EventHelpers.givePlayerItemStack(
       event, certificateId, 1
     )
     MilesTicketEventMethods.givePlayerMilesTickets(
@@ -87,7 +87,7 @@ const CollectHelper = {
   },
   handleMilestoneReached (event, categoryId) {
     let collectedNum = CollectLogger.playerCollectionByCategory(event, categoryId).length
-    EventMethods.tellPlayer(
+    EventHelpers.tellPlayer(
       event,
       Text.translate(
         CollectTransHelper.messageKey('milestoneReached'),
@@ -101,7 +101,7 @@ const CollectHelper = {
     )
   },
   handleSubCollectionCompleted (event, subCollectionId) {
-    EventMethods.tellPlayer(
+    EventHelpers.tellPlayer(
       event,
       Text.translate(
         CollectTransHelper.messageKey('categoryCompleted'),
