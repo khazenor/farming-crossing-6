@@ -13,9 +13,18 @@ const CollectGuiSubMenus = {
         item: "minecraft:slime_ball"
       }, { "col": 0 })
       for (let itemId of itemIds) {
+        let itemIcon
+        let label
+        if (CollectEntity.isEntityCollection(categoryId)) {
+          itemIcon = CollectEntity.spawnEggFromEntityType(itemId)
+          label = TransHelper.entityName(itemId)
+        } else {
+          itemIcon = itemId
+          TransHelper.itemName(itemId)
+        }
         subMenu.addSlot({
-          label: TransHelper.itemName(itemId),
-          item: itemId
+          label: label,
+          item: itemIcon
         })
       }
       subMenu.nextRow()

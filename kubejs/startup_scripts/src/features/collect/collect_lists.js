@@ -2,6 +2,7 @@ const CollectLists = {
   blocks: {
     startingRewardPerObject: 1,
     rewardIncreasePerObject: 0.05,
+    icon: "minecraft:oak_log",
     subCollections: {
       logs: [
         "minecraft:acacia_log",
@@ -38,6 +39,7 @@ const CollectLists = {
   items: {
     startingRewardPerObject: 1,
     rewardIncreasePerObject: 0.05,
+    icon: 'minecraft:black_dye',
     subCollections: {
       dyes: [
         'minecraft:black_dye',
@@ -62,6 +64,7 @@ const CollectLists = {
   entities: {
     startingRewardPerObject: 1,
     rewardIncreasePerObject: 0.05,
+    icon: 'minecraft:allay_spawn_egg',
     subCollections: {
       water: [
         "minecraft:squid",

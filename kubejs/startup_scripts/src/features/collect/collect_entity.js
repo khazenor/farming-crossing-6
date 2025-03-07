@@ -1,8 +1,11 @@
 const CollectEntity = {
   listToSpawnEggs (typeList) {
-    return typeList.map(eType => this._spawnEggFromEntityType(eType))
+    return typeList.map(eType => this.spawnEggFromEntityType(eType))
   },
-  _spawnEggFromEntityType (entityType) {
+  spawnEggFromEntityType (entityType) {
     return `${entityType}_spawn_egg`
+  },
+  isEntityCollection (collectionId) {
+    return `${collectionId}` === 'entities'
   }
 }

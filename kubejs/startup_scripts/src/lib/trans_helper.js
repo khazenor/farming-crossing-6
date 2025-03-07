@@ -4,5 +4,8 @@ const TransHelper = {
   },
   itemName (itemId) {
     return Text.translate(Item.of(itemId).getDescriptionId())
+  },
+  entityName (entityId) {
+    return Text.translate('entity.' + entityId.replace(':', '.'))
   }
 }

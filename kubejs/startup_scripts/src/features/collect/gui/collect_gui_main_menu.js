@@ -1,13 +1,31 @@
 const CollectGuiMainMenu = {
   openMainMenu (event) {
-    let mainMenu = new MenuType(Text.translate('collect.gui.name.mainMenu'))
-    mainMenu.addSlot({page: 0, x: 0, y: 0,
+    let mainMenu = new MenuWrapper(Text.translate('collect.gui.name.mainMenu'))
+
+    mainMenu.addSlot({
       label:CollectTransHelper.categoryName('blocks'),
-      item: "minecraft:oak_log",
+      item: CollectLists['blocks'].icon,
       onLeftClicked: (_clickedEvent) => {
         CollectGuiSubMenus.openSubMenuForCategory(event, 'blocks')
       }
-    });
-    mainMenu.show(event.player)
+    })
+
+    mainMenu.addSlot({
+      label:CollectTransHelper.categoryName('items'),
+      item: CollectLists['items'].icon,
+      onLeftClicked: (_clickedEvent) => {
+        CollectGuiSubMenus.openSubMenuForCategory(event, 'items')
+      }
+    })
+
+    mainMenu.addSlot({
+      label:CollectTransHelper.categoryName('entities'),
+      item: CollectLists['entities'].icon,
+      onLeftClicked: (_clickedEvent) => {
+        CollectGuiSubMenus.openSubMenuForCategory(event, 'entities')
+      }
+    })
+
+    mainMenu.menu.show(event.player)
   }
 }
