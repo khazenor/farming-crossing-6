@@ -5,3 +5,4 @@ kubejs-neoforge-2101.7.1-build.181.jar
 MouseTweaks-neoforge-mc1.21-2.26.1.jar
 ProbeJS-7.5.1.jar
 rhino-2101.2.7-build.74.jar
+SimpleBackups-1.21-4.0.8.jar

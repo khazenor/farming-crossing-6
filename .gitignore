@@ -37,3 +37,4 @@ kubejs/config/client.properties
 kubejs/startup_scripts/jsconfig.json
 kubejs/server_scripts/jsconfig.json
 $files/todo.md
+simplebackups/*
